@@ -2,6 +2,38 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
+
+  var getShortenLink = function(url) {
+    return $http({
+      method: 'GET',
+      url: '/api/links/',
+      data: {
+        url: url
+      }
+    }).then(function(data){return data });
+  }
+
+  var postShortenLink = function(url) {
+    return $http({
+      method: 'POST',
+      url: '/api/links/',
+      data: url
+    }).then(function(data){return data });
+  }
+
+  return {
+    getShortenLink: getShortenLink,
+    postShortenLink: postShortenLink
+  };
+    // success(function(data, status, headers, config) {
+    //   console.log("data: ", data);
+    //   console.log("status: ", status);
+    //   console.log("headers: ", headers);
+    //   console.log("config: ", config);
+    // }).
+    // error(function(data, status, headers, config) {
+    //   console.log("error");
+    // });
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
