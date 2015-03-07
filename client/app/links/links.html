@@ -7,7 +7,25 @@
     <li><a href="#/logout" class="logout">Logout</a></li>
   </ul>
   </nav>
-   <pre>
-     {{ data }}
-   </pre>
+<!--   <div ng-controller="LinksController">
+    <div ng-model="display">
+      {{ data }}
+    </div>
+  </div> -->
+  <div class="links" ng-repeat="link in data">
+    <div class="link">
+      <img src="assets/redirect_icon.png">
+      <div class="info">
+        <div class="visits">
+          <span class="count">
+            {{ link.visits }}
+          </span>
+          Visits
+        </div>
+        <div class="title">{{ link.title }}</div>
+        <div class="original">{{ link.url }}</div>
+        <a href="{{link.base_url}}/{{ link.code }}">{{link.base_url}}/{{link.code}}</a>
+      </div>
+    </div>
+  </div>
 </div>
