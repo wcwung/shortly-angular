@@ -4,13 +4,15 @@ angular.module('shortly.services', [])
   // Your code here
 
   var getShortenLink = function() {
-    console.log("Work derk");
+    console.log("getShortenLink called");
     return $http({
       method: 'GET',
       url: '/api/links/'
     }).then(function(resp){
-     console.log("hello!");
-    });
+      return resp.data;
+    }).catch(function(err) {
+      console.err("Shorten Link error", err);
+    })
   }
 
   var postShortenLink = function(url) {
