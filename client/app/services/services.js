@@ -3,14 +3,14 @@ angular.module('shortly.services', [])
 .factory('Links', function ($http) {
   // Your code here
 
-  var getShortenLink = function(url) {
+  var getShortenLink = function() {
+    console.log("Work derk");
     return $http({
       method: 'GET',
-      url: '/api/links/',
-      data: {
-        url: url
-      }
-    }).then(function(data){return data });
+      url: '/api/links/'
+    }).then(function(resp){
+     console.log("hello!");
+    });
   }
 
   var postShortenLink = function(url) {

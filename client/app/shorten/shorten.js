@@ -11,6 +11,4 @@ angular.module('shortly.shorten', [])
     // console.log($location + "location");
     // console.log(Links + "links");
   }
-
-
 });
