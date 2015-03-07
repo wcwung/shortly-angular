@@ -6,9 +6,5 @@ angular.module('shortly.shorten', [])
   $scope.shorten = function () {
     $scope.url = $scope.shorten.url;
     return Links.postShortenLink({url: $scope.url});
-
-    // console.log($scope.shorten + "scope");
-    // console.log($location + "location");
-    // console.log(Links + "links");
   }
 });

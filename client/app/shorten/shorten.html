@@ -1,5 +1,12 @@
 <div id='container'>
 <!-- Your code here -->
+  <nav class="navigation">
+  <ul>
+    <li><a href="#/links" class="index">All links</a></li>
+    <li><a href="#/create" class="create">Shorten</a></li>
+    <li><a href="#/logout" class="logout">Logout</a></li>
+  </ul>
+  </nav>
   <form name="shortenForm" ng-submit='shorten()'>
     <input type="text" ng-model="shorten.url">
     <button>shorten yo!</button>
